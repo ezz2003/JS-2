@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hamburger</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <span>choose a burger</span>
+            <label class="hamburgers">
+                <input type = 'radio' name = 'size' value = 'little' class="little" checked>little</input>
+
+                <input type = 'radio' name = 'size' value = 'big' class="big">big</input>
+            </label>
+            <span>choose the burger filling</span>
+            <label class="fillings">
+                <input type = 'radio' name = 'fillings' value = 'cheese' class ="cheese" checked>cheese</input>
+                <input type = 'radio' name = 'fillings' value = 'salad' class = "salad">salad</input>
+                <input type = 'radio' name = 'fillings' value = 'potatoes' class =  "potatoes">potatoes</input>
+            </label>
+            <span>additional option</span>
+            <label class="additional_option">
+                <input type='checkbox' name = 'options' value = 'seasoning' class="seasoning">sprinkle with seasoning</input>
+
+                <input type="checkbox" name = 'options' value = 'mayonnaise' class="mayonnaise">pour over the mayonnaise</input>
+            </label>
+            <div class="cart">
+                <div class="cart-wrap">
+                    <h4>size: 0</h4>
+                    <h4>fillings: 0</h4>
+                    <h4>seasoning: 0</h4>
+                    <h3>Total price: 0</h3>
+                    <h4>Total calories: 0</h4>
+                </div>
+                <div class="create-reset">
+                    <button class="create">create a hamburger</button>
+                    <a href="index.html" class="reset">reset</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
