@@ -1,0 +1,32 @@
+.registration-forms input[type="submit"] {
+    width: 110px;
+    height: 33px;
+    background-color: #1f1e1e;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    -webkit-transition: background-color 1s ease, color 100ms ease, border 1s ease, -webkit-transform 1s ease;
+    transition: background-color 1s ease, color 100ms ease, border 1s ease, -webkit-transform 1s ease;
+    transition: background-color 1s ease, color 100ms ease, border 1s ease, transform 1s ease;
+    transition: background-color 1s ease, color 100ms ease, border 1s ease, transform 1s ease, -webkit-transform 1s ease;
+}
+
+.registration-bottom-part-form {
+    border: none;
+    box-shadow: 1px 0 1px 0 rgb(199, 199, 199);
+    margin: 0;
+    padding: 0;
+}
+
+.inText:focus::placeholder {
+    opacity: 0;
+}
+
+.inTextCast {
+    /* display: block; */
+    border: 2px solid red;
+    color: red;
+}
