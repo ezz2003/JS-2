@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Интернет-магазин</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="logo">E-shop</div>
+      <div class="cart">
+        <form action="#" class="search-form" v-on:submit.prevent="filter">
+          <!--отменяем действие по умолчанию (должно было перезагузить страницу и назначаем наш filter)-->
+          <input type="text" class="search-field" v-model="userSearch" />
+          <!--присваиваем действие по нашему методу-->
+          <!--@submit.prevent="filter" -->
+          <!--.prevent - отменяет действие submit по умолчанию, а == присваивает новое действие-->
+          <button class="btn-search" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <button class="btn-cart" type="button" @click="show=!show">
+          Корзина
+        </button>
+        <div class="cart-block invisible" v-show="show">
+          <span v-if="!cartItems.length">There is nothing, choose products</span>
+          <div class="cart-item" data-id="${this.id_product}" v-for="product of cartItems">
+            <div class="product-bio">
+              <img :src="imgCart" alt="Some image" />
+              <div class="product-desc">
+                <p class="product-title">{{product.product_name}}</p>
+                <p class="product-quantity">Quantity: {{product.quantity}}</p>
+                <p class="product-single-price">{{product.price}}</p>
+              </div>
+            </div>
+            <div class="right-block">
+              <p class="product-price">{{product.priceAll}}</p>
+              <button class="del-btn" data-id="${this.id_product}" @click="delProduct(product)">
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="products">
+        <div class="product-item" v-for="product of products" :key="product.id_product">
+          <!--:key - это защита от дубликатов-->
+          <img :src="imgCatalog" alt="Some img" />
+          <div class="desc">
+            <h3>{{product.product_name}}</h3>
+            <p>{{product.price}} $</p>
+            <button class="buy-btn" @click="addProduct(product)">
+              Купить
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+    integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
